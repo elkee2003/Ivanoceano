@@ -1,0 +1,34 @@
+.aboutMe-wrapper {
+    width: 100%;
+    background: var(--grey-black-gradient);
+    color:white;
+    display: flex; 
+    align-items: center;
+}
+
+.aboutMe-container {
+    /* text-align: center; */
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.aboutMe-container p {
+    font-size: 1.05rem;
+}
+
+.sub-head {
+    color: var(--orangecolor);
+}
+
+.reasons {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.025rem;
+    gap: 0.4rem;
+}
+
+.reasons p {
+    color: #e4f0f7;
+}
