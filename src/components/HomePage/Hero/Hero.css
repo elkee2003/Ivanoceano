@@ -91,6 +91,9 @@
 }
 
 @media (max-width: 1300px) {
+  .writeup-container {
+    font-size: 3.5rem;
+  }
 
 }
 @media (max-width: 900px) {
