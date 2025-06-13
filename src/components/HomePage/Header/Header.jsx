@@ -44,14 +44,14 @@ const Header = () => {
         setTimeout(() => {
           const element = document.getElementById(section);
           if (element) {
-            const elementTop = element.getBoundingClientRect().top + window.scrollY - 80;
+            const elementTop = element.getBoundingClientRect().top + window.scrollY - 95;
             window.scrollTo({ top: elementTop, behavior: "smooth" });
           }
         }, 100); // Delay to ensure the DOM is rendered
       } else {
         const element = document.getElementById(section);
         if (element) {
-          const elementTop = element.getBoundingClientRect().top + window.scrollY - 80;
+          const elementTop = element.getBoundingClientRect().top + window.scrollY - 95;
           window.scrollTo({ top: elementTop, behavior: "smooth" });
         }
       }
@@ -89,7 +89,7 @@ const Header = () => {
             onClick={() => navigateAndScroll('/', 'hero')}
           >
             <img 
-                src={isScrolled ? './logo.png' : './logotrans.png'}
+                src={isScrolled ? './logotrans.png' : './logotrans.png'}
                 alt="logo" 
                 width={150} 
             />
@@ -109,18 +109,23 @@ const Header = () => {
                   Home
                 </span>
 
-                {/* Offers */}
-                <span onClick={() => navigateAndScroll('/', 'offers')}>
-                  Offers
+                {/* About Us */}
+                <span onClick={() => navigateAndScroll('/', 'aboutUs')}>
+                  About Us
                 </span>
 
-                {/* Sign-in / Get Started */}
-                <span onClick={() => navigateAndScroll('/', 'signin')}>
-                  Get Started
+                {/* Products */}
+                <span onClick={() => navigateAndScroll('/', 'products')}>
+                  Products
+                </span>
+
+                {/* Services */}
+                <span onClick={() => navigateAndScroll('/', 'services')}>
+                  Services
                 </span>
 
                 {isMobileView && (
-                  <span onClick={() => navigateAndScroll('/', 'contact')}>
+                  <span onClick={() => navigateAndScroll('/', 'contactUs')}>
                     Contact Us
                   </span>
                 )}
@@ -129,12 +134,12 @@ const Header = () => {
                   className='button'
                   style={{
                       color: "white",
-                      background: "var(--blue-gradient)",
+                      background: "var(--orange-gradient)",
                   }}
-                  onClick={() => navigateAndScroll('/', 'contact')}
+                  onClick={() => navigateAndScroll('/', 'contactUs')}
               >
                   <Link 
-                    to="contact" 
+                    to="contactUs" 
                     smooth={true} 
                     duration={500}
                     offset={-70}

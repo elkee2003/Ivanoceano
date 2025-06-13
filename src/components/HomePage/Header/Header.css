@@ -46,7 +46,7 @@
 }
 
 .h-menu a:hover, .h-menu span:hover {
-    color:var(--green);
+    color:var(--darkBlue);
 }
 
 .h-wrapper.scrolled .h-menu a, .h-wrapper.scrolled .h-menu span {
@@ -83,7 +83,7 @@
 }
 
 .h-wrapper.dark-screen .h-menu span:hover {
-    color:var(--green);
+    color:var(--darkBlue);
 }
 
 
@@ -104,7 +104,7 @@
     display: block;
     width: 100%;
     height: 3px;
-    background: var(--blue-gradient);
+    background: var( --orange-gradient);
     transition: all 0.3s ease;
     transform-origin: center;
 }

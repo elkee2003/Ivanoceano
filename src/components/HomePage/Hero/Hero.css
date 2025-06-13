@@ -109,8 +109,25 @@
 @media (max-width: 500px) {
   .writeup-container {
     top:45%;
-    left: 10%;
-    transform: translate(-2%, -80%);
+    left: 50%;
+    padding:0 0;
+    transform: translate(-50%, -50%);
+    font-size: 2.7rem;
   }
+
+  .hero-book-session-container {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14rem;
+    padding: 0 0;
+  }
+
+  .hero-button {
+    width: 10rem;
+    padding: 1rem 1rem; 
+    font-size: 1.2rem;
+  }
+
   
 }

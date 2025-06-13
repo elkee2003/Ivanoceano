@@ -13,7 +13,7 @@
   --charcoal-black-gradient: radial-gradient(circle, #111111 20%, #000000  80%);
   --grey-black-gradient: linear-gradient(70deg, #0a0a0a 50%, #1d1d1d  100%);
   --blue-gradient: linear-gradient(270deg, #0bfff3 20%, #0ea19a 100%);
-  --orange-gradient: linear-gradient(270deg, #ff810b 20%, #4c4d4c 100%);
+  --orange-gradient: linear-gradient(270deg, #4c4d4c 10%, #fc7c04 100%);
   --pearl-gradient: linear-gradient(50deg, #f5d27b 20%, #9b9178 100%);
   --aqua: #00ffff;
   --dark-aqua: #dcfdfd;

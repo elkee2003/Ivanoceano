@@ -5,27 +5,64 @@ const Products = () => {
   return (
     <section
         id='products'
-        className="shop-wrapper"
+        className="product-wrapper"
     >
-        <div className="paddings innerWidth flexColStart shop-container">
+        <div className="paddings innerWidth flexColStart product-container">
             <h1 className="primaryText">Products</h1>
-            <p className="secondaryText">
-            Find Answerace At:Rainbow Town, Port Harcourt.
-            </p>
-            <p>Come visit my shop and enjoy a premium grooming experience in a relaxed and stylish setting.</p>
 
-            <h2>
-                <span className='clock'><LuCalendarClock /></span> Opening Hours
-            </h2>
-            <p>
-                • <b>Monday:</b> 9:00 AM - 8:00 PM
-            </p>
-            <p>• <b>Tuesday:</b> Closed</p>
-            <p>• <b>Wednesday - Friday:</b> 9:00 AM - 8:00 PM</p>
-            <p>
-                • <b>Saturday:</b> 8:00 AM - 9:00 PM
-            </p>
-            <p>• <b>Sunday:</b> Closed</p>
+            <div className='productImage-container'>
+
+                {/* Atua */}
+                <a
+                    href="https://atualog.com"
+                    className="product-link"
+                >
+                    <div className='product-item'>
+                        <img 
+                            src={'./Atua logo.png' }
+                            alt="Atua Logo" 
+                            className='product-image'
+                        />
+                        <p>
+                            Atua
+                        </p>
+                    </div>
+                </a>
+
+                {/* Opusama */}
+                <a
+                    href="https://opusama.com"
+                    className="product-link"
+                >
+                    <div className='product-item'>
+                        <img 
+                            src={'./Opusama logo.png' }
+                            alt="Opusama Logo" 
+                            className='product-image'
+                        />
+                        <p>
+                            Opusama
+                        </p>
+                    </div>
+                </a>
+
+                {/* Answerace */}
+                <a
+                    href="https://answerace.netlify.app/"
+                    className="product-link"
+                >
+                    <div className='product-item'>
+                        <img 
+                            src={'./Answerace logo.png' }
+                            alt="Answerace Logo" 
+                            className='product-image' 
+                        />
+                        <p>
+                            Answerace
+                        </p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
   );

@@ -3,7 +3,7 @@ import './AboutUs.css';
 const AboutUs = () => {
   return (
     <section
-        id='aboutMe'
+        id='aboutUs'
         className="aboutMe-wrapper"
     >
         <div className="paddings innerWidth flexColStart aboutMe-container">

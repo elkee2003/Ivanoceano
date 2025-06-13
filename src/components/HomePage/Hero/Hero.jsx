@@ -91,7 +91,7 @@ const Hero = () => {
       </div>
 
       {/* Social Media accounts */}
-      <div className="hero-socialmedia-container">
+      {/* <div className="hero-socialmedia-container">
         <a
           href="https://www.instagram.com/answer_ace?igsh=djJ6OGhqdmVzNGdx"
           target="_blank"
@@ -106,7 +106,7 @@ const Hero = () => {
         >
           <FaXTwitter className="social-media-icon" />
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };
