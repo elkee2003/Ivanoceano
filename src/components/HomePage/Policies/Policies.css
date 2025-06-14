@@ -1,0 +1,43 @@
+.policies-wrapper {
+    width: 100%;
+    background: var(--grey-black-gradient);
+    color:white;
+    display: flex; 
+    align-items: center;
+}
+
+.policies-container {
+    /* text-align: center; */
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.policies-container p {
+    font-size: 1.05rem;
+}
+
+.header {
+    color: var(--orangecolor);
+    align-self: center;
+}
+
+.sub-header {
+    color: var(--darkorangecolor);
+}
+.sub-sub-header {
+    font-size: 1.3rem;
+    color: var(--darkorangecolor);
+    font-style: italic;
+}
+
+.goToLink {
+    color: var(--aqua);
+    cursor: pointer;
+}
+
+.note {
+    font-style: italic;
+    color:rgb(167, 167, 167)
+}

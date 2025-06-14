@@ -31,7 +31,8 @@
     display: flex;
     gap: 1.5rem;
 }
-.footer-links a {
+
+.footer-link-con {
     cursor: pointer;
 }
 
@@ -46,7 +47,7 @@
 }
 
 .footer-link:hover {
-    color: var(--green)
+    color: var(--offWhite)
 }
 
 /* Responsive Adjustments */

@@ -1,6 +1,9 @@
 import './Footer.css';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+    
+    const navigate = useNavigate();
 
     const navigateToContact = () => {
         const signInElement = document.getElementById('contact');
@@ -17,23 +20,32 @@ const Footer = () => {
                     &copy; {new Date().getFullYear()} Ivanoceano. All rights reserved.
                 </p>
                 <div className="footer-links">
-                    {/* <a 
-                        href="https://sites.google.com/view/opusama-termsofservice/home"
-                        className="footer-link"
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                    <div 
+                        className='footer-link-con'
+                        onClick={() =>
+                            navigate('/terms_and_conditions')
+                        }
                     >
-                        Terms of Service
-                    </a>
+                        <p className="footer-link">Terms & Conditions</p>
+                    </div>
 
-                    <a 
-                        href="https://sites.google.com/view/opusama/home"
-                        className="footer-link"
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                    <div 
+                        className='footer-link-con'
+                        onClick={() =>
+                            navigate('/privacy_policy')
+                        }
                     >
-                        Privacy Policy
-                    </a> */}
+                        <p className="footer-link">Privacy Policy</p>
+                    </div>
+                    
+                    <div 
+                        className='footer-link-con'
+                        onClick={() =>
+                            navigate('/refund_policy')
+                        }
+                    >
+                        <p className="footer-link">Refund Policy</p>
+                    </div>
 
                     
                     <button className="footer-link"
