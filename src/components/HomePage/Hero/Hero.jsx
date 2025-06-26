@@ -1,61 +1,75 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import "./Hero.css";
 
-// Custom hook to check screen width
-const useMediaQuery = (query) => {
-  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+// Custom hook to get screen size category
+const useScreenCategory = () => {
+  const [category, setCategory] = useState("large");
 
-  // useEffect to check media query to display background images
   useEffect(() => {
-    const mediaQueryList = window.matchMedia(query);
-    const listener = (event) => setMatches(event.matches);
+    const checkCategory = () => {
+      const width = window.innerWidth;
+      if (width >= 1100) setCategory("large");
+      else if (width >= 500) setCategory("medium");
+      else setCategory("small");
+    };
 
-    mediaQueryList.addEventListener("change", listener);
-    return () => mediaQueryList.removeEventListener("change", listener);
-  }, [query]);
+    checkCategory();
+    window.addEventListener("resize", checkCategory);
+    return () => window.removeEventListener("resize", checkCategory);
+  }, []);
 
-  return matches;
+  return category;
 };
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Detect screen size using multiple queries
-  const isLargeScreen = useMediaQuery("(min-width: 1100px)");
-  const isMediumScreen = useMediaQuery("(min-width: 500px) and (max-width: 1099px)");
-  const isSmallScreen = useMediaQuery("(min-width: 250px) and (max-width: 499px)");
+  const screenCategory = useScreenCategory();
 
-  const largeScreenImages = [
-    "/heroImage1.png",
-    "/heroImage2.png",
+  const imageSets = useMemo(() => {
+    const largeImages = [
+      "/heroImage1.png",
+      "/heroImage2.png",
+    ];
 
-  ];
+    return {
+      large: largeImages,
+      medium: [...largeImages],
+      small: [...largeImages],
+    };
+  }, []);
 
+  const images = imageSets[screenCategory] || [];
 
-  const mediumScreenImages = [...largeScreenImages];
-  const smallScreenImages = [...largeScreenImages];
-
-  // Choose images based on screen size
-  let images = [];
-  if (isLargeScreen) {
-    images = largeScreenImages;
-  } else if (isMediumScreen) {
-    images = mediumScreenImages;
-  } else if (isSmallScreen) {
-    images = smallScreenImages;
-  } else {
-    images = [];
-  }
-
-  // Function to change the image every 7 seconds
+  // Preload images on category change only
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 7000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+      images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      });
+  }, [screenCategory]);
+
+  // Background image changer
+  useEffect(() => {
+      let isMounted = true;
+
+      const changeImage = () => {
+      const nextIndex = (currentImage + 1) % images.length;
+      const img = new Image();
+      img.src = images[nextIndex];
+      img.onload = () => {
+          if (isMounted) setCurrentImage(nextIndex);
+      };
+      };
+
+      const interval = setInterval(changeImage, 4000);
+      return () => {
+      isMounted = false;
+      clearInterval(interval);
+      };
+  }, [currentImage, images]);
 
   return (
     <div
